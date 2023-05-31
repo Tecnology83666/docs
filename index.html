@@ -2,43 +2,116 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Signup Page</title>
+    <title>Document</title>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="landing.css" />
+    <!-- <style>
+    </style> -->
   </head>
 
   <body>
-    <div class="container">
-      <form id="signup-form" class="signup-form">
-        <input
-          type="text"
-          id="username-input"
-          placeholder="Enter your username"
-          minlength="6"
-          maxlength="40"
-          required
-        />
-        <input
-          type="email"
-          id="email-input"
-          placeholder="Enter your email"
-          required
-        />
-        <input
-          type="password"
-          id="password-input"
-          placeholder="Enter your password"
-          minlength="8"
-          maxlength="40"
-          required
-        />
-        <button id="send-code-button" type="submit">Send code</button>
-        <span id="message-s"></span>
-        <a href="./login.html">Existing user?</a>
-      </form>
-    </div>
+    <section class="hero">
+      <header>
+        <nav>
+          <div class="brand-logo">
+            <img src="./img/Roomie-logo1-nobg2.png" alt="Your Brand Logo" />
+          </div>
 
-    <script src="index.js"></script>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Discover your Ideal Space for Living and Work with
+          <span>Roomie.</span>
+        </h1>
+        <p class="hero-description">
+          We provide quick and easy rental searches here.
+        </p>
+        <div class="cta-wrapper">
+          <div class="cta">
+            <div class="cta-button">
+              <label
+                for="cta-checkbox"
+                id="cta-label"
+                onclick="ctaClickHandler()"
+                >Get <br />Started</label
+              >
+              <input type="checkbox" name="" id="cta-checkbox" />
+            </div>
+            <span class="cta-links">
+              <a href="#" id="cta-login">Login</a>
+              <a href="#" id="cta-signup">Signup</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JS -->
+    <script src="landing.js"></script>
+    <script>
+      /*----------  CTA BUTTON , checkbox AND CTA LINKS ---------- */
+
+      function ctaClickHandler() {
+        var ctaCheckbox = document.getElementById("cta-checkbox");
+        var ctaLabel = document.getElementById("cta-label");
+        var ctaLinks = document.getElementsByClassName("cta-links");
+        var screenWidth =
+          window.innerWidth ||
+          document.documentElement.clientWidth ||
+          document.body.clientWidth;
+
+        if (screenWidth >= 270) {
+          // Perform actions for screen width equal to or greater than 270px
+          if (ctaCheckbox.checked) {
+            for (var i = 0; i < ctaLinks.length; i++) {
+              ctaLinks[i].style.left = "-15px";
+              ctaLabel.innerHTML = "<===</br><===";
+            }
+          } else {
+            for (var i = 0; i < ctaLinks.length; i++) {
+              ctaLinks[i].style.left = "-100px";
+              ctaLabel.innerHTML = "Get <br />Started";
+            }
+          }
+        } else {
+          // Perform actions for screen width below 270px
+          if (ctaCheckbox.checked) {
+            for (var i = 0; i < ctaLinks.length; i++) {
+              ctaLinks[i].style.left = "0";
+              ctaLinks[i].style.top = "0";
+              ctaLabel.innerHTML = "<===</br><===";
+            }
+          } else {
+            for (var i = 0; i < ctaLinks.length; i++) {
+              ctaLinks[i].style.left = "-15px";
+              ctaLinks[i].style.top = "-65px";
+              ctaLabel.innerHTML = "Get <br />Started";
+
+              /*  ctaLabel.style.transform = "rotate(-90deg)"; */
+            }
+          }
+        }
+      }
+
+      /*----------  END OF CTA BUTTON , checkbox AND CTA LINKS  ----------*/
+      var ctaLogin = document.getElementById("cta-login");
+      ctaLogin.onclick = function () {
+        alert("Login");
+      };
+    </script>
   </body>
 </html>
