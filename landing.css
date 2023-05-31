@@ -17,7 +17,7 @@ html {
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url("./img/hero-bg.jpg");
+  /* background-image: url("hero-bg.jpg"); */
   background-size: cover;
   background-position: center;
   padding: 10px;
@@ -115,10 +115,10 @@ nav {
   display: flex;
   align-items: center;
   /* -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px; */
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px; */
 }
 
 .nav-links > li:last-child > a {
@@ -255,8 +255,8 @@ nav {
 }
 
 /*=============================================
-=           Screen - responsive          =
-=============================================*/
+  =           Screen - responsive          =
+  =============================================*/
 
 @media screen and (max-width: 600px) {
   .brand-logo {
@@ -400,15 +400,15 @@ nav {
 
 @media screen and (max-width: 250px) {
   /* .cta {
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  .cta-links {
-    top: -65px;
-    left: -15px;
-  } */
+      display: flex;
+      flex-direction: column;
+      
+    }
+  
+    .cta-links {
+      top: -65px;
+      left: -15px;
+    } */
 }
 
 /*=====  End of Screen - responsive ======*/
